@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Eieme</title>
+  <subtitle>你肯定不知道我今天怎么这么开心</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://blog.eieme.com/"/>
+  <updated>2017-08-08T00:48:04.667Z</updated>
+  <id>http://blog.eieme.com/</id>
+  
+  <author>
+    <name>吴林er</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>当前VS用到的插件列表</title>
+    <link href="http://blog.eieme.com/Visual-Studio-2013/%E5%BD%93%E5%89%8DVS%E7%94%A8%E5%88%B0%E7%9A%84%E6%8F%92%E4%BB%B6%E5%88%97%E8%A1%A8/"/>
+    <id>http://blog.eieme.com/Visual-Studio-2013/当前VS用到的插件列表/</id>
+    <published>2017-08-08T00:36:09.000Z</published>
+    <updated>2017-08-08T00:48:04.667Z</updated>
+    
+    <content type="html"><![CDATA[<p>###for Visual Studio 2013</p>
+<p>1.GhostDoc Pro<br><a href="http://submain.com/products/ghostdoc.aspx" target="_blank" rel="external">http://submain.com/products/ghostdoc.aspx</a></p>
+<p>2.Indent Guides 中文修改版<br><a href="https://marketplace.visualstudio.com/items?itemName=SteveDowerMSFT.IndentGuides" target="_blank" rel="external">https://marketplace.visualstudio.com/items?itemName=SteveDowerMSFT.IndentGuides</a></p>
+<p>3.Viasfora<br><a href="http://viasfora.com/" target="_blank" rel="external">http://viasfora.com/</a></p>
+<p>4.VSColorOutput<br><a href="http://mike-ward.net/vscoloroutput/" target="_blank" rel="external">http://mike-ward.net/vscoloroutput/</a></p>
+<p>5.VSCommands for Visual Studio 2013<br><a href="http://vscommands.squaredinfinity.com/blog" target="_blank" rel="external">http://vscommands.squaredinfinity.com/blog</a></p>
+<p>6.Visual Assist<br><a href="https://marketplace.visualstudio.com/items?itemName=WholeTomatoSoftware.VisualAssist" target="_blank" rel="external">https://marketplace.visualstudio.com/items?itemName=WholeTomatoSoftware.VisualAssist</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;###for Visual Studio 2013&lt;/p&gt;
+&lt;p&gt;1.GhostDoc Pro&lt;br&gt;&lt;a href=&quot;http://submain.com/products/ghostdoc.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;htt
+    
+    </summary>
+    
+      <category term="Visual Studio 2013" scheme="http://blog.eieme.com/categories/Visual-Studio-2013/"/>
+    
+    
+      <category term="插件" scheme="http://blog.eieme.com/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="vs" scheme="http://blog.eieme.com/tags/vs/"/>
+    
+      <category term="Visual Studio" scheme="http://blog.eieme.com/tags/Visual-Studio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git SSH配置</title>
+    <link href="http://blog.eieme.com/git/SSH%E9%85%8D%E7%BD%AE/"/>
+    <id>http://blog.eieme.com/git/SSH配置/</id>
+    <published>2017-08-06T03:35:53.000Z</published>
+    <updated>2017-08-08T01:02:38.248Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.生成自定义名字的 ssh 公钥<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"YOUR_EMAIL@YOUREMAIL.COM"</span> -f ~<span class="regexp">/.ssh/</span>oschina</div></pre></td></tr></table></figure></p>
+<p>执行完成后，会在 ~/.ssh/目录下生成一个 oschina 和 oschina.pub 文件。</p>
+<a id="more"></a>
+<p>2.查看你的 public key，并把他添加到你的git服务器网站上。<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat ~<span class="regexp">/.ssh/</span>oschina.pub</div></pre></td></tr></table></figure></p>
+<p>3.测试配置文件是否正常工作<br>在终端中输入<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">-T</span> <span class="selector-tag">git</span>@<span class="keyword">git</span>.<span class="keyword">oschina</span>.<span class="keyword">net</span></div></pre></td></tr></table></figure></p>
+<p>若返回<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Welcome <span class="keyword">to</span> Git<span class="symbol">@OSC</span>, yourname!</div></pre></td></tr></table></figure></p>
+<p>则证明添加成功，如果出现 <code>Permission denied (publickey)</code> 则表示失败，执行<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-<span class="keyword">add</span><span class="bash"> ~/.ssh/oschina</span></div></pre></td></tr></table></figure></p>
+<p>出现<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Identity <span class="string">added:</span> <span class="regexp">/c/</span>Users<span class="regexp">/user/</span>.ssh<span class="regexp">/oschina (/</span>c<span class="regexp">/Users/</span>user<span class="regexp">/.ssh/</span>oschina)</div></pre></td></tr></table></figure></p>
+<p>再次执行测试命令<br>（我到这里就正常，其他情况暂时还没遇到过，遇到了再在这里补充。）<br>4.<strong>enjoy it~</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.生成自定义名字的 ssh 公钥&lt;br&gt;&lt;figure class=&quot;highlight awk&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ssh-keygen -t rsa -C &lt;span class=&quot;string&quot;&gt;&quot;YOUR_EMAIL@YOUREMAIL.COM&quot;&lt;/span&gt; -f ~&lt;span class=&quot;regexp&quot;&gt;/.ssh/&lt;/span&gt;oschina&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;执行完成后，会在 ~/.ssh/目录下生成一个 oschina 和 oschina.pub 文件。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="http://blog.eieme.com/categories/git/"/>
+    
+    
+      <category term="ssh" scheme="http://blog.eieme.com/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CocosCreator 使用笔记</title>
+    <link href="http://blog.eieme.com/CocosCreator/CocosCreator%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+    <id>http://blog.eieme.com/CocosCreator/CocosCreator使用笔记/</id>
+    <published>2016-11-18T03:26:07.000Z</published>
+    <updated>2016-11-19T02:54:30.106Z</updated>
+    
+    <content type="html"><![CDATA[<p>[TOC]</p>
+<p>本文所使用的Cocos Creator 版本为 v1.3.1</p>
+<a id="more"></a>
+<h3 id="使用-json-数据"><a href="#使用-json-数据" class="headerlink" title="使用 json 数据"></a>使用 json 数据</h3><h4 id="加载-json-文件"><a href="#加载-json-文件" class="headerlink" title="加载 json 文件"></a>加载 json 文件</h4><p>比如在 <code>Data</code> 文件夹下有个 <code>demo.json</code> 文件，内容为：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"XiaoMing"</span>: &#123;</div><div class="line">    <span class="attr">"age"</span>: <span class="number">13</span>,</div><div class="line">    <span class="attr">"family"</span>: [</div><div class="line">      <span class="string">"papa"</span>,<span class="string">"mam"</span>,<span class="string">"grandpa"</span>,<span class="string">"grandma"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"friend"</span>: [</div><div class="line">      <span class="string">"XiaoHong"</span>,<span class="string">"LiLei"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"hasPet"</span>: <span class="string">"false"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"XiaoHong"</span>: &#123;</div><div class="line">    <span class="attr">"age"</span>: <span class="number">12</span>,</div><div class="line">    <span class="attr">"family"</span>: [</div><div class="line">      <span class="string">"papa"</span>,<span class="string">"mam"</span>,<span class="string">"sister"</span>,<span class="string">"grandpa"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"friend"</span>: [</div><div class="line">      <span class="string">"XiaoMing"</span>,<span class="string">"HanMeimei"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"hasPet"</span>: <span class="string">"false"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"LiLei"</span>: &#123;</div><div class="line">    <span class="attr">"age"</span>: <span class="number">16</span>,</div><div class="line">    <span class="attr">"family"</span>: [</div><div class="line">      <span class="string">"papa"</span>,<span class="string">"mam"</span>,<span class="string">"sister"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"friend"</span>: [</div><div class="line">      <span class="string">"HanMeimei"</span>,<span class="string">"XiaoMing"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"hasPet"</span>: <span class="string">"true"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"HanMeimei"</span>: &#123;</div><div class="line">    <span class="attr">"age"</span>: <span class="number">16</span>,</div><div class="line">    <span class="attr">"family"</span>: [</div><div class="line">      <span class="string">"papa"</span>,<span class="string">"mam"</span>,<span class="string">"brother"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"friend"</span>: [</div><div class="line">      <span class="string">"LiLei"</span>,<span class="string">"XiaoHong"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"hasPet"</span>: <span class="string">"false"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>下面是一个示例：<br> 通过 <code>cc.loader.loadRes</code> 加载的数据一定要放在 <code>resources</code> 目录下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//文件名不用加扩展名</span></div><div class="line"> cc.loader.loadRes(<span class="string">'Data/demo'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, txt</span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (err) &#123;</div><div class="line">                cc.log(<span class="string">"读取数据---读取错误---："</span>+err);</div><div class="line">                <span class="keyword">return</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="comment">//在这里写加载完成之后的代码</span></div><div class="line">            <span class="keyword">var</span> objJson = txt;</div><div class="line">            <span class="comment">//我们想要得到 XiaoMing 的家庭成员：</span></div><div class="line">            cc.log(<span class="string">"小明的家庭成员 ---&gt;  "</span>+objJson.XiaoMing.family);<span class="comment">//这里直接会输出一个数组</span></div><div class="line">            <span class="comment">//现在我们想看 XiaoMing 第一个朋友的家庭成员，可以这样：</span></div><div class="line">            <span class="keyword">var</span> firstFriend = objJson.XiaoMing.friend[<span class="number">0</span>];</div><div class="line">            cc.log(<span class="string">"第一位朋友 ---&gt; "</span>+firstFriend);</div><div class="line">			cc.log(<span class="string">"第一位朋友的家庭 ---&gt; "</span>+objJson[firstFriend].family);</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="把字符串转换成一个类型"><a href="#把字符串转换成一个类型" class="headerlink" title="把字符串转换成一个类型"></a>把字符串转换成一个类型</h3><p>2016-11-19 10:53 更新<br>本节出自 官方 <code>Demo/cases/collider/Shape.fire</code><br>例如我们现在有一个名字叫 Circle 的节点，把这个节点名字传入一个方法中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">updateStatus: <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;<span class="comment">//假设当前脚本挂载的节点有 cc.CircleCollider 组件</span></div><div class="line">		<span class="comment">//传入的 name 为 Circle</span></div><div class="line">	 <span class="keyword">var</span> shapeClassName = <span class="string">`cc.<span class="subst">$&#123;name&#125;</span>Collider`</span>;</div><div class="line">     <span class="keyword">var</span> collider = <span class="keyword">this</span>.node.getComponent(shapeClassName);</div><div class="line">     <span class="comment">//这样我们就得到了当前节点上的 cc.CircleCollider</span></div><div class="line">     collider.enabled = !collider.enabled;</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;p&gt;本文所使用的Cocos Creator 版本为 v1.3.1&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="CocosCreator" scheme="http://blog.eieme.com/categories/CocosCreator/"/>
+    
+    
+      <category term="CocosCreator" scheme="http://blog.eieme.com/tags/CocosCreator/"/>
+    
+      <category term="Cocos" scheme="http://blog.eieme.com/tags/Cocos/"/>
+    
+      <category term="Creator" scheme="http://blog.eieme.com/tags/Creator/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Hexo 和 GitHub 搭建博客 -- 自动备份 Hexo 到 Coding</title>
+    <link href="http://blog.eieme.com/Hexo/%E4%BD%BF%E7%94%A8Hexo%E5%92%8CGitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
+    <id>http://blog.eieme.com/Hexo/使用Hexo和GitHub搭建博客（四）/</id>
+    <published>2016-11-13T05:09:41.000Z</published>
+    <updated>2017-08-08T01:02:38.253Z</updated>
+    
+    <content type="html"><![CDATA[<p>[TOC]</p>
+<h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><p>11月15日更新：<br>在家，想用<code>hexo b</code>做下备份。然而备份失败，然后用 <code>ssh git@git.coding.net</code> 测试了下，出现：</p>
+<a id="more"></a>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Hello eieme! You<span class="symbol">'ve</span> connected <span class="keyword">to</span> Coding.net via SSH successfully!</div><div class="line">Connection <span class="keyword">to</span> git.coding.net closed.</div></pre></td></tr></table></figure>
+<p>把仓库地址改成 https 的就能备份了。<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">backup</span>:</div><div class="line">  <span class="attribute">type</span>: git</div><div class="line">  <span class="attribute">theme</span>: next</div><div class="line">  <span class="attribute">message</span>: backup</div><div class="line">  <span class="attribute">repository</span>:</div><div class="line">      <span class="attribute">coding</span>: <span class="attribute">https</span>:<span class="comment">//git.coding.net/eieme/hexo.git,master</span></div><div class="line">      #<span class="attribute">coding</span>: git<span class="variable">@git</span>.coding.<span class="attribute">net</span>:eieme/hexo.git,master</div></pre></td></tr></table></figure></p>
+<p>不知道在另一台电脑不能备份是不是这个原因。明天试一下- -</p>
+<p>——&gt;</p>
+<p>本节内容只在一台电脑测试通过，在第二台电脑上出现无法自动备份的情况，如下 ：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">me</span>.github.io.git.</div><div class="line">To github.<span class="keyword">com</span>:eieme/eieme.github.io.git</div><div class="line"> + d26119c...<span class="number">469</span>bfac HEAD -&gt; master (forced <span class="keyword">update</span>)</div><div class="line">On branch master</div><div class="line">nothing <span class="keyword">to</span> commit, working tree clean</div><div class="line">Warnin<span class="variable">g:</span> Permanently added <span class="string">'git.coding.net,60.174.240.191'</span> (RSA) <span class="keyword">to</span> the <span class="keyword">list</span> of</div><div class="line">known hosts.</div><div class="line">Branch master <span class="keyword">set</span> <span class="keyword">up</span> <span class="keyword">to</span> track remote branch master from git@git.coding.ne<span class="variable">t:eieme</span></div><div class="line">/eieme.git.</div><div class="line">To git.coding.ne<span class="variable">t:eieme</span>/eieme.git</div><div class="line"> + d26119c...<span class="number">469</span>bfac HEAD -&gt; master (forced <span class="keyword">update</span>)</div><div class="line">INFO  Deploy done: git</div><div class="line">======================Auto Backup Begin===========================</div><div class="line">INFO  Start backup: git</div><div class="line">[master <span class="number">8460357</span>] backup</div><div class="line"> <span class="number">1</span> <span class="keyword">file</span> changed, <span class="number">4</span> insertions(+)</div><div class="line">fata<span class="variable">l:</span> <span class="string">'coding'</span> does not appear <span class="keyword">to</span> <span class="keyword">be</span> <span class="keyword">a</span> git repository</div><div class="line">fata<span class="variable">l:</span> Could not <span class="keyword">read</span> from remote repository.</div><div class="line"></div><div class="line">Please <span class="keyword">make</span> sure you have the correct access rights</div><div class="line"><span class="built_in">and</span> the repository <span class="built_in">exists</span>.</div><div class="line">INFO  Backup done: git</div><div class="line">==================Auto Backup Complete============================</div></pre></td></tr></table></figure>
+<p>需要手动 <code>git push</code> 一次。因为我是刚接触 Git 有很多不太明白的地方，希望知道能如何解决的同学分享下解决方案。</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>在搭建 Hexo 博客过程中，无意间发现一个备份 Hexo 博客源文件的方法，于是就拿过来用了。-0-<br>由于 GitHub 的私有仓库是收费的，所以我们备份到 Coding 上。<br>这里用到的是 <a href="https://github.com/coneycode/hexo-git-backup" target="_blank" rel="external">hexo-git-backup</a>。<br>大家根据自己的实际情况参照 README.md 进行配置。</p>
+<p>然后就是要实现自动备份功能，我想要在每次博客上传完成之后自动备份一次，可以监听 Hexo 的 deployAfter 事件。</p>
+<h4 id="修改-gitignore-文件"><a href="#修改-gitignore-文件" class="headerlink" title="修改 .gitignore 文件"></a>修改 .gitignore 文件</h4><p>如果没有请手动创建一个，在里面加入<code>*.log</code> 和 <code>public/</code> 以及<code>.deploy*/</code>。因为每次执行hexo generate命令时，上述目录都会被重写更新。因此忽略这两个目录下的文件更新，加快push速度。</p>
+<h4 id="安装shelljs模块"><a href="#安装shelljs模块" class="headerlink" title="安装shelljs模块"></a>安装shelljs模块</h4><p>要实现这个自动备份功能，需要依赖Node.js的一个shelljs模块,该模块重新包装了child_process,调用系统命令更加的方便。该模块需要安装后使用。</p>
+<p>在命令中键入以下命令，完成shelljs模块的安装：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> <span class="comment">--save shelljs</span></div></pre></td></tr></table></figure></p>
+<h4 id="编写自动备份脚本"><a href="#编写自动备份脚本" class="headerlink" title="编写自动备份脚本"></a>编写自动备份脚本</h4><p>待到模块安装完成，在Hexo根目录的scripts文件夹下新建一个js文件，文件名随意取。<br>ps: 如果没有scripts目录，请新建一个。<br>然后在脚本中，写入以下内容：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'shelljs/global'</span>);</div><div class="line"></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">	hexo.on(<span class="string">'deployAfter'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="comment">//当deploy完成后执行备份</span></div><div class="line">		run();</div><div class="line">	&#125;);</div><div class="line">&#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"产生了一个错误&lt;(￣3￣)&gt; !，错误详情为："</span> + e.toString());</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span> (!which(<span class="string">'git'</span>)) &#123;</div><div class="line">		echo(<span class="string">'Sorry, this script requires git'</span>);</div><div class="line">		exit(<span class="number">1</span>);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		echo(<span class="string">"======================Auto Backup Begin==========================="</span>);</div><div class="line">		cd(<span class="string">'F:\Hexo'</span>);    <span class="comment">//此处修改为 Hexo 根目录路径</span></div><div class="line">		<span class="keyword">if</span>(exec(<span class="string">'hexo b'</span>).code !== <span class="number">0</span>)&#123;</div><div class="line">			echo(<span class="string">'Error: Hexo backup failed'</span>);</div><div class="line">			exit(<span class="number">1</span>);</div><div class="line">		&#125;</div><div class="line">		echo(<span class="string">"==================Auto Backup Complete============================"</span>)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果你的 Git 远程仓库名称不为 origin 的话，还需要修改第28行执行的 push 命令，修改成自己的远程仓库名和相应的分支名。<br>这样子，每次更新博文并deploy到服务器上之后，备份就自动启动并完成备份啦</p>
+<p>要记得更换电脑执行下面的命令，保证自动备份正常运行<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> <span class="comment">--save shelljs</span></div><div class="line">npm <span class="keyword">install</span> hexo-git-<span class="keyword">backup</span> <span class="comment">--save</span></div></pre></td></tr></table></figure></p>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><ul>
+<li><a href="https://github.com/coneycode/hexo-git-backup" target="_blank" rel="external">https://github.com/coneycode/hexo-git-backup</a></li>
+<li><a href="http://zhujiegao.com/2015/12/06/automatic-backup/" target="_blank" rel="external">http://zhujiegao.com/2015/12/06/automatic-backup/</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h3 id=&quot;声明&quot;&gt;&lt;a href=&quot;#声明&quot; class=&quot;headerlink&quot; title=&quot;声明&quot;&gt;&lt;/a&gt;声明&lt;/h3&gt;&lt;p&gt;11月15日更新：&lt;br&gt;在家，想用&lt;code&gt;hexo b&lt;/code&gt;做下备份。然而备份失败，然后用 &lt;code&gt;ssh git@git.coding.net&lt;/code&gt; 测试了下，出现：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://blog.eieme.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://blog.eieme.com/tags/Hexo/"/>
+    
+      <category term="Coding" scheme="http://blog.eieme.com/tags/Coding/"/>
+    
+      <category term="备份" scheme="http://blog.eieme.com/tags/%E5%A4%87%E4%BB%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Hexo 和 GitHub 搭建博客 -- 同时部署到 GitHub 和 Coding</title>
+    <link href="http://blog.eieme.com/Hexo/%E4%BD%BF%E7%94%A8Hexo%E5%92%8CGitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <id>http://blog.eieme.com/Hexo/使用Hexo和GitHub搭建博客（三）/</id>
+    <published>2016-11-13T02:53:58.000Z</published>
+    <updated>2017-08-08T01:02:38.251Z</updated>
+    
+    <content type="html"><![CDATA[<p>[TOC]</p>
+<p>用 GitHub 托管博客访问速度有时候会很慢，毕竟 GitHub 服务器在国外。为了提高访问速度我们将网站同时部署至Coding。<br>实现国内访问跳转到 Coding，国外访问跳转到 GitHub。</p>
+<a id="more"></a>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="注册-Coding，创建项目"><a href="#注册-Coding，创建项目" class="headerlink" title="注册 Coding，创建项目"></a>注册 Coding，创建项目</h4><p>项目名最好和你的账户用户名相同。<br>然后配置SSH密钥，可以直接使用以前 GitHub 生成的，参考前面教程。<br>测试<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">-T</span> <span class="selector-tag">git</span>@<span class="keyword">git</span>.<span class="keyword">coding</span>.<span class="keyword">net</span></div></pre></td></tr></table></figure></p>
+<p>如出现下面这样，表示添加成功了。</p>
+<blockquote>
+<p>Hello eieme! You’ve connected to Coding.net via SSH successfully!</p>
+</blockquote>
+<h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p>找到hexo目录下站点配置文件 _config.yml<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line">  <span class="attribute">type</span>: git</div><div class="line">  <span class="attribute">repository</span>:</div><div class="line">              <span class="attribute">github</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:eieme/eieme.github.io.git,master</div><div class="line">              <span class="attribute">coding</span>: git<span class="variable">@git</span>.coding.<span class="attribute">net</span>:eieme/eieme.git,master</div></pre></td></tr></table></figure></p>
+<p>使用notepad++编辑配置文件时，这段代码的左边只能有两个减号，否则会出现错误。<br><img src="http://img.eieme.com/hexo-config-deploy.png" alt="hexo-config-deploy"></p>
+<h4 id="添加-Staticfile-文件"><a href="#添加-Staticfile-文件" class="headerlink" title="添加 Staticfile 文件"></a>添加 Staticfile 文件</h4><p>打开到 source 文件夹下，执行以下命令 生成 Staticfile 文件<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">touch</span> Staticfile <span class="comment">#名字必须是Staticfile</span></div></pre></td></tr></table></figure></p>
+<h4 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h4><p>执行命令：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo clean</span></div><div class="line"><span class="attribute">hexo g</span></div><div class="line"><span class="attribute">hexo d</span></div></pre></td></tr></table></figure></p>
+<p>如果看到类似这样的，则表示发布成功：</p>
+<blockquote>
+<p>Branch master set up to track remote branch master from git@git.coding.net:eieme<br>/eieme.git.<br>To git.coding.net:eieme/eieme.git<br> +bd70fb7…da3c3ce HEAD -&gt; master (forced update)<br>INFO  Deploy done: git</p>
+</blockquote>
+<h4 id="开启pages服务"><a href="#开启pages服务" class="headerlink" title="开启pages服务"></a>开启pages服务</h4><p>进入 项目 -&gt; 打开 <code>Pages 服务</code>-&gt;</p>
+<blockquote>
+<h5 id="Coding-Pages-服务"><a href="#Coding-Pages-服务" class="headerlink" title="Coding Pages 服务"></a>Coding Pages 服务</h5><p>Coding Pages 服务 ， 是一个支持 jekyll 静态站的服务。查看帮助<br>暂未开启 Pages 服务，填写部署分支，立即开启：<br>部署分支：coding-pages <a href="">立即开启</a></p>
+</blockquote>
+<p>修改部署分支为<code>master</code>，然后立即开启<br>出现：</p>
+<blockquote>
+<p>已经开启 pages 服务，分支 master 立即访问： <a href="http://eieme.coding.me/eieme" target="_blank" rel="external">http://eieme.coding.me/eieme</a><br><a href="">重新部署</a>  <a href="">关闭服务</a><br>绑定一个自定义域名：<br>examlpe.com -<a href="">添加域名绑定</a></p>
+</blockquote>
+<p>添加你的域名即可。</p>
+<h4 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h4><p>进入自己的域名管理中心，将 CNAME 记录指向 pages.coding.me</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">记录类型</th>
+<th style="text-align:right">主机记录</th>
+<th style="text-align:left">解析线路</th>
+<th style="text-align:center">记录值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CNAME</td>
+<td style="text-align:right">@</td>
+<td style="text-align:left">默认</td>
+<td style="text-align:center">eieme.coding.me</td>
+</tr>
+<tr>
+<td style="text-align:left">CNAME</td>
+<td style="text-align:right">www</td>
+<td style="text-align:left">默认</td>
+<td style="text-align:center">eieme.coding.me</td>
+</tr>
+<tr>
+<td style="text-align:left">A</td>
+<td style="text-align:right">@</td>
+<td style="text-align:left">海外</td>
+<td style="text-align:center">192.30.252.153</td>
+</tr>
+<tr>
+<td style="text-align:left">A</td>
+<td style="text-align:right">www</td>
+<td style="text-align:left">海外</td>
+<td style="text-align:center">192.30.252.153</td>
+</tr>
+</tbody>
+</table>
+<p>如果使用的是 DNSPod 需要多加一个”.”，即 <code>username.coding.me.</code><br>我当前用的是阿里云的解析，就没有加那个”.”</p>
+<p>OK，enjoy it!</p>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><ul>
+<li><a href="http://www.jianshu.com/p/3141cffc1b1b" target="_blank" rel="external">http://www.jianshu.com/p/3141cffc1b1b</a></li>
+<li><a href="http://sanwen8.cn/p/1a0TJhT.html" target="_blank" rel="external">http://sanwen8.cn/p/1a0TJhT.html</a></li>
+</ul>
+<ul>
+<li><a href="http://opiece.me/2016/03/13/push-hexo-to-github-and-coding/?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">http://opiece.me/2016/03/13/push-hexo-to-github-and-coding/?utm_source=tuicool&amp;utm_medium=referral</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;p&gt;用 GitHub 托管博客访问速度有时候会很慢，毕竟 GitHub 服务器在国外。为了提高访问速度我们将网站同时部署至Coding。&lt;br&gt;实现国内访问跳转到 Coding，国外访问跳转到 GitHub。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://blog.eieme.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://blog.eieme.com/tags/Hexo/"/>
+    
+      <category term="GitHub" scheme="http://blog.eieme.com/tags/GitHub/"/>
+    
+      <category term="Coding" scheme="http://blog.eieme.com/tags/Coding/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Hexo 和 GitHub 搭建博客 -- 绑定域名</title>
+    <link href="http://blog.eieme.com/Hexo/%E4%BD%BF%E7%94%A8Hexo%E5%92%8CGitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>http://blog.eieme.com/Hexo/使用Hexo和GitHub搭建博客（二）/</id>
+    <published>2016-11-13T01:55:12.000Z</published>
+    <updated>2017-08-08T01:02:38.252Z</updated>
+    
+    <content type="html"><![CDATA[<p>[TOC]</p>
+<p>这里默认你已经拥有了一个独立域名。<br>下面开始绑定</p>
+<h3 id="添加-CNAME"><a href="#添加-CNAME" class="headerlink" title="添加 CNAME"></a>添加 CNAME</h3><p>向你的 Github Pages 仓库添加一个CNAME(一定要<strong>大写</strong>)文件<br>里面只包含你要绑定的域名 像这样的：</p>
+<a id="more"></a>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">example</span><span class="selector-class">.com</span></div></pre></td></tr></table></figure>
+<h3 id="DNS-解析"><a href="#DNS-解析" class="headerlink" title="DNS 解析"></a>DNS 解析</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">记录类型</th>
+<th style="text-align:right">主机记录</th>
+<th style="text-align:center">记录值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">A</td>
+<td style="text-align:right">@</td>
+<td style="text-align:center">192.30.252.153</td>
+</tr>
+<tr>
+<td style="text-align:left">A</td>
+<td style="text-align:right">@</td>
+<td style="text-align:center">192.30.252.154</td>
+</tr>
+<tr>
+<td style="text-align:left">CNAME</td>
+<td style="text-align:right">www</td>
+<td style="text-align:center">username.github.io</td>
+</tr>
+</tbody>
+</table>
+<p>用你自己的 Github 用户名替换 username<br>如果使用的是 DNSPod 需要多加一个”.”，即 <code>username.github.io.</code><br>我当前用的是阿里云的解析，就没有加那个”.”</p>
+<p>最后等待你的 DNS 配置生效，一般几分钟就可以使用你自定义的域名进行访问了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;p&gt;这里默认你已经拥有了一个独立域名。&lt;br&gt;下面开始绑定&lt;/p&gt;
+&lt;h3 id=&quot;添加-CNAME&quot;&gt;&lt;a href=&quot;#添加-CNAME&quot; class=&quot;headerlink&quot; title=&quot;添加 CNAME&quot;&gt;&lt;/a&gt;添加 CNAME&lt;/h3&gt;&lt;p&gt;向你的 Github Pages 仓库添加一个CNAME(一定要&lt;strong&gt;大写&lt;/strong&gt;)文件&lt;br&gt;里面只包含你要绑定的域名 像这样的：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://blog.eieme.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://blog.eieme.com/tags/Hexo/"/>
+    
+      <category term="GitHub" scheme="http://blog.eieme.com/tags/GitHub/"/>
+    
+      <category term="博客" scheme="http://blog.eieme.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="绑定域名" scheme="http://blog.eieme.com/tags/%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Hexo 和 GitHub 搭建博客 -- 建站</title>
+    <link href="http://blog.eieme.com/Hexo/%E4%BD%BF%E7%94%A8Hexo%E5%92%8CGitHub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://blog.eieme.com/Hexo/使用Hexo和GitHub搭建博客（一）/</id>
+    <published>2016-11-12T12:49:23.000Z</published>
+    <updated>2017-08-08T01:02:38.250Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天整理下使用 Hexo 和 Github 建个人博客的方法。</p>
+<p>[TOC]</p>
+<h3 id="为什么使用-Hexo"><a href="#为什么使用-Hexo" class="headerlink" title="为什么使用 Hexo"></a>为什么使用 Hexo</h3><ol>
+<li>快速、简洁且高效。</li>
+<li>使用 Markdown 解析文章。</li>
+<li>直接部署在 GitHub 上，不用去买空间，省钱。</li>
+<li>光这三点，理由就很充分了好吗！</li>
+</ol>
+<a id="more"></a>
+<p>###<span id="install">安装</span><br>Hexo 需要 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> 和 <a href="https://git-scm.com/" target="_blank" rel="external">Git</a> 的支持，如果没有安装，请自行下载安装。<br>安装完以后，就可以使用 npm 完成 Hexo 的安装<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-<span class="keyword">cli</span></div></pre></td></tr></table></figure></p>
+<p>如果在使用 npm 过程中，速度很慢，可以试试 <a href="http://blog.eieme.com/2016/11/12/%E5%9B%BD%E5%86%85%E4%BC%98%E7%A7%80npm%E9%95%9C%E5%83%8F%E6%8E%A8%E8%8D%90%E5%8F%8A%E4%BD%BF%E7%94%A8/">更换 npm 源</a></p>
+<h3 id="开始建站"><a href="#开始建站" class="headerlink" title="开始建站"></a>开始建站</h3><p>安装完之后，我们需要创建一个文件夹（如D:\Hexo）放置 Hexo 工程，然后我们使用 Git Shell 进入这个文件夹，执行命令生成建立网站所需要的所有文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> D:\Hexo</div><div class="line">hexo init</div></pre></td></tr></table></figure></p>
+<p>安装依赖包<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span></div></pre></td></tr></table></figure></p>
+<p>安装Hexo 插件：自动生成sitemap,Rss，部署到git等<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo-generator-<span class="keyword">index</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-generator-<span class="keyword">archive</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-generator-<span class="keyword">category</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-generator-tag <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-<span class="keyword">server</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-deployer-heroku <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-deployer-rsync <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-deployer-openshift <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-renderer-marked@<span class="number">0.2</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-renderer-stylus@<span class="number">0.2</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-generator-feed@<span class="number">1</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-generator-sitemap@<span class="number">1</span> <span class="comment">--save</span></div><div class="line"></div><div class="line">npm <span class="keyword">install</span> <span class="comment">--save shelljs</span></div><div class="line">npm <span class="keyword">install</span> hexo-git-<span class="keyword">backup</span> <span class="comment">--save</span></div></pre></td></tr></table></figure></p>
+<p>目录结构<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── .deploy       <span class="comment">//需要部署的文件</span></div><div class="line">├── node_modules  <span class="comment">//Hexo插件</span></div><div class="line">├── <span class="keyword">public</span>        <span class="comment">//生成的静态网页文件</span></div><div class="line">├── scaffolds     <span class="comment">//模板</span></div><div class="line">├── <span class="keyword">source</span>        <span class="comment">//博客正文和其他源文件, 404 favicon CNAME 等都应该放在这里</span></div><div class="line">|   ├── _drafts   <span class="comment">//草稿</span></div><div class="line">|   └── _posts    <span class="comment">//文章</span></div><div class="line">├── themes        <span class="comment">//主题</span></div><div class="line">├── _config.yml   <span class="comment">//全局配置文件</span></div><div class="line">└── <span class="keyword">package</span>.json</div><div class="line"><span class="comment">//在最初生成的时候可能没有 .deploy、public 文件夹</span></div></pre></td></tr></table></figure></p>
+<h4 id="生成网页"><a href="#生成网页" class="headerlink" title="生成网页"></a>生成网页</h4><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">generate</span>       <span class="comment">//自动根据当前目录下文件,生成静态网页 //可简写成 -&gt; hexo g</span></div><div class="line"></div><div class="line">hexo server         <span class="comment">//运行本地服务 //可简写成 -&gt; hexo s</span></div><div class="line"><span class="comment">//或</span></div><div class="line">hexo s --debug</div></pre></td></tr></table></figure>
+<p>浏览器输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 就可以看到效果。<br><img src="http://img.eieme.com/hello-hexo.png" alt="预览图"></p>
+<h4 id="添加博文"><a href="#添加博文" class="headerlink" title="添加博文"></a>添加博文</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span>  <span class="comment">//新建博文,其中postName是博文题目</span></div></pre></td></tr></table></figure>
+<p>博文会自动生成在博客目录下<code>source/_posts\postName.md</code></p>
+<h3 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h3><h4 id="配置-SSH-keys"><a href="#配置-SSH-keys" class="headerlink" title="配置 SSH keys"></a>配置 SSH keys</h4><p>我们如何让本地git项目与远程的github建立联系呢?用SSH keys。<br>检查 SSH keys的设置，首先我们需要检查你电脑上现有的ssh key，使用 Git Shell 输入：<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">cd</span> ~<span class="string">/.ssh</span> <span class="string">//</span>检查本机的ssh密钥</div></pre></td></tr></table></figure></p>
+<p>如果提示：No such file or directory 说明你是第一次使用git。<br>生成新的SSH Key：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ssh-keygen</span> <span class="selector-tag">-t</span> <span class="selector-tag">rsa</span> <span class="selector-tag">-C</span> "邮件地址@<span class="keyword">youremail</span>.<span class="keyword">com</span>"</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Generating public/private rsa key pair.<br>Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</p>
+</blockquote>
+<p>注意1: 此处的邮箱地址，你可以输入自己的邮箱地址;<br>注意2: 此处的「-C」的是大写的「C」<br>然后系统会要你输入密码：</p>
+<blockquote>
+<p>Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;    //在输入的时候不会有显示任何文字符号，直接输入就好<br>Enter same passphrase again:&lt;再次输入加密串&gt;</p>
+</blockquote>
+<p>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。<br>最后看到这样的界面，就成功设置ssh key了：<br><img src="http://img.eieme.com/gen-ssh.png" alt="gen-ssh"></p>
+<h4 id="添加-SSH-Key-到-GitHub"><a href="#添加-SSH-Key-到-GitHub" class="headerlink" title="添加 SSH Key 到 GitHub"></a>添加 SSH Key 到 GitHub</h4><p>在本机设置SSH Key之后，需要添加到 <a href="https://github.com/" target="_blank" rel="external">GitHub</a> 上，以完成 SSH 链接的设置。</p>
+<ol>
+<li>打开本地 C:\Users\Administrator.ssh\id_rsa.pub 文件。此文件里面内容为刚才生成人密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</li>
+<li>登陆 <a href="https://github.com/" target="_blank" rel="external">GitHub</a> 系统。点击右上角的 Settings—&gt;SSH and GPG keys —&gt; New SSH key</li>
+<li>把你本地生成的密钥复制到里面(key文本框中)， 点击 add key 就ok了</li>
+</ol>
+<h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><p>可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">-T</span> <span class="selector-tag">git</span>@<span class="keyword">github</span>.<span class="keyword">com</span></div></pre></td></tr></table></figure></p>
+<p>然后会看到</p>
+<blockquote>
+<p>Hi eieme! You’ve successfully authenticated, but GitHub does not provide shell a<br>ccess.</p>
+</blockquote>
+<h4 id="创建-Repository"><a href="#创建-Repository" class="headerlink" title="创建 Repository"></a>创建 Repository</h4><p>这个 Repository 就将是存放你即将拥有的博客的地方，创建的时候注意Repository的名字，取名的格式应该为“用户名.github.io”，比如我的就是  eieme.github.io ，</p>
+<h4 id="配置-config-yml文件"><a href="#配置-config-yml文件" class="headerlink" title="配置_config.yml文件"></a>配置_config.yml文件</h4><p>添加如下内容：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line">	<span class="attribute">type</span>: git</div><div class="line">	<span class="attribute">repository</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:eieme/eieme.github.io.git</div><div class="line">	<span class="attribute">branch</span>: master</div></pre></td></tr></table></figure></p>
+<h4 id="部署到-GitHub"><a href="#部署到-GitHub" class="headerlink" title="部署到 GitHub"></a>部署到 GitHub</h4><p>回到你的 Hexo 文件夹<br>输入：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo d</span></div></pre></td></tr></table></figure></p>
+<p>完成以上步骤，博客就算是做好了。<br>在浏览器中输入username.github.io(自己对应即可)看到了你在本地搭建的博客主页一样。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/setup.html</a></li>
+<li><a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a></li>
+<li><a href="http://www.ezlippi.com/blog/2016/02/jekyll-to-hexo.html" target="_blank" rel="external">http://www.ezlippi.com/blog/2016/02/jekyll-to-hexo.html</a></li>
+<li><a href="http://www.jianshu.com/p/b7886271e21a" target="_blank" rel="external">http://www.jianshu.com/p/b7886271e21a</a></li>
+<li><a href="http://www.chinaz.com/web/2016/0105/491998.shtml" target="_blank" rel="external">http://www.chinaz.com/web/2016/0105/491998.shtml</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天整理下使用 Hexo 和 Github 建个人博客的方法。&lt;/p&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h3 id=&quot;为什么使用-Hexo&quot;&gt;&lt;a href=&quot;#为什么使用-Hexo&quot; class=&quot;headerlink&quot; title=&quot;为什么使用 Hexo&quot;&gt;&lt;/a&gt;为什么使用 Hexo&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;快速、简洁且高效。&lt;/li&gt;
+&lt;li&gt;使用 Markdown 解析文章。&lt;/li&gt;
+&lt;li&gt;直接部署在 GitHub 上，不用去买空间，省钱。&lt;/li&gt;
+&lt;li&gt;光这三点，理由就很充分了好吗！&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://blog.eieme.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://blog.eieme.com/tags/Hexo/"/>
+    
+      <category term="GitHub" scheme="http://blog.eieme.com/tags/GitHub/"/>
+    
+      <category term="博客" scheme="http://blog.eieme.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>国内优秀npm镜像推荐及使用</title>
+    <link href="http://blog.eieme.com/Hexo/%E5%9B%BD%E5%86%85%E4%BC%98%E7%A7%80npm%E9%95%9C%E5%83%8F%E6%8E%A8%E8%8D%90%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
+    <id>http://blog.eieme.com/Hexo/国内优秀npm镜像推荐及使用/</id>
+    <published>2016-11-12T12:46:34.000Z</published>
+    <updated>2017-08-08T01:02:38.254Z</updated>
+    
+    <content type="html"><![CDATA[<p>npm全称Node Package Manager，是node.js的模块依赖管理工具。由于npm的源在国外，所以国内用户使用起来各种不方便。下面整理出了一部分国内优秀的npm镜像资源，国内用户可以选择使用。</p>
+<a id="more"></a>
+<h4 id="国内优秀npm镜像"><a href="#国内优秀npm镜像" class="headerlink" title="国内优秀npm镜像"></a>国内优秀npm镜像</h4><h5 id="淘宝npm镜像"><a href="#淘宝npm镜像" class="headerlink" title="淘宝npm镜像"></a>淘宝npm镜像</h5><ul>
+<li>搜索地址：<a href="http://npm.taobao.org/" target="_blank" rel="external">http://npm.taobao.org/</a></li>
+<li>registry地址：<a href="http://registry.npm.taobao.org/" target="_blank" rel="external">http://registry.npm.taobao.org/</a></li>
+</ul>
+<h5 id="cnpmjs镜像"><a href="#cnpmjs镜像" class="headerlink" title="cnpmjs镜像"></a>cnpmjs镜像</h5><ul>
+<li>搜索地址：<a href="http://cnpmjs.org/" target="_blank" rel="external">http://cnpmjs.org/</a></li>
+<li>registry地址：<a href="http://r.cnpmjs.org/" target="_blank" rel="external">http://r.cnpmjs.org/</a></li>
+</ul>
+<h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4><p>有很多方法来配置npm的registry地址，下面根据不同情境列出几种比较常用的方法。以淘宝npm镜像举例：</p>
+<h5 id="1-临时使用"><a href="#1-临时使用" class="headerlink" title="1.临时使用"></a>1.临时使用</h5><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">npm</span> --registry https:<span class="regexp">//</span>registry.<span class="built_in">npm</span>.taobao.org install express</div></pre></td></tr></table></figure>
+<h5 id="2-持久使用"><a href="#2-持久使用" class="headerlink" title="2.持久使用"></a>2.持久使用</h5><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">npm config <span class="keyword">set</span> registry <span class="comment">https:</span>//<span class="comment">registry.npm.taobao.org</span></div><div class="line"></div><div class="line"><span class="comment">// 配置后可通过下面方式来验证是否成功</span></div><div class="line">npm <span class="comment">config get registry</span></div><div class="line"><span class="comment">// 或</span></div><div class="line">npm <span class="comment">info express</span></div></pre></td></tr></table></figure>
+<h5 id="3-通过cnpm使用"><a href="#3-通过cnpm使用" class="headerlink" title="3.通过cnpm使用"></a>3.通过cnpm使用</h5><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm install -g cnpm --registry=<span class="string">https:</span><span class="comment">//registry.npm.taobao.org</span></div><div class="line"></div><div class="line"><span class="comment">// 使用</span></div><div class="line">cnpm install express</div></pre></td></tr></table></figure>
+<p>转载自：<a href="http://riny.net/2014/cnpm/" target="_blank" rel="external">http://riny.net/2014/cnpm/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;npm全称Node Package Manager，是node.js的模块依赖管理工具。由于npm的源在国外，所以国内用户使用起来各种不方便。下面整理出了一部分国内优秀的npm镜像资源，国内用户可以选择使用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://blog.eieme.com/categories/Hexo/"/>
+    
+    
+      <category term="npm镜像" scheme="http://blog.eieme.com/tags/npm%E9%95%9C%E5%83%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>当前Hexo博客使用的插件</title>
+    <link href="http://blog.eieme.com/Hexo/%E5%BD%93%E5%89%8DHexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6/"/>
+    <id>http://blog.eieme.com/Hexo/当前Hexo博客使用的插件/</id>
+    <published>2016-11-12T01:52:31.000Z</published>
+    <updated>2017-08-08T01:02:38.256Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo-generator-<span class="keyword">index</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-generator-<span class="keyword">archive</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-generator-<span class="keyword">category</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-generator-tag <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-<span class="keyword">server</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-deployer-heroku <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-deployer-rsync <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-deployer-openshift <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-renderer-marked@<span class="number">0.2</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-renderer-stylus@<span class="number">0.2</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-generator-feed@<span class="number">1</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-generator-sitemap@<span class="number">1</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> hexo-git-<span class="keyword">backup</span> <span class="comment">--save</span></div><div class="line">npm <span class="keyword">install</span> <span class="comment">--save shelljs</span></div><div class="line"></div><div class="line">//SEO</div><div class="line">npm <span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save-dev</span></div><div class="line">npm <span class="keyword">install</span> hexo-generator-baidu-sitemap <span class="comment">--save-dev</span></div><div class="line">npm <span class="keyword">install</span> hexo-generator-seo-friendly-sitemap</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://blog.eieme.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://blog.eieme.com/tags/Hexo/"/>
+    
+      <category term="插件" scheme="http://blog.eieme.com/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安装wordpress出现500 Internal Server Error</title>
+    <link href="http://blog.eieme.com/wordpress/%E5%AE%89%E8%A3%85wordpress%E5%87%BA%E7%8E%B0500-Internal-Server-Error/"/>
+    <id>http://blog.eieme.com/wordpress/安装wordpress出现500-Internal-Server-Error/</id>
+    <published>2016-11-02T12:38:38.000Z</published>
+    <updated>2017-08-08T01:02:38.255Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h1><p>我当前使用的markdown编辑器是Haroopad，使用hexo新建了一个md文档，文件名就是本章标题“安装wordpress出现500 Internal Server Error”,然后双击右击打开这个文件都不行。后来才发现文件名不能有空格。科科~</p>
+<a id="more"></a>
+<h1 id="以下正文"><a href="#以下正文" class="headerlink" title="以下正文"></a>以下正文</h1><p>今天在阿里云主机上用wordpress搭建了个网站。程序安装的时候提示500 Internal Server Error，通过某度找到了下面的解决方案。</p>
+<p>在./wp-includes/class-http.php中搜索</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　$request_<span class="keyword">order</span> = apply_filters( <span class="string">'http_api_transports'</span>, <span class="keyword">array</span>( <span class="string">'curl'</span>, <span class="string">'streams'</span> ), $args, $url );</div></pre></td></tr></table></figure>
+<p>替换成</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$request_<span class="keyword">order</span> = apply_filters( <span class="string">'http_api_transports'</span>, <span class="keyword">array</span>( <span class="string">'streams'</span> ), $args, $url );</div></pre></td></tr></table></figure>
+<p>然后覆盖到wp-includes文件夹下，覆盖前，为了防止出错，请备份下原文件。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;吐槽&quot;&gt;&lt;a href=&quot;#吐槽&quot; class=&quot;headerlink&quot; title=&quot;吐槽&quot;&gt;&lt;/a&gt;吐槽&lt;/h1&gt;&lt;p&gt;我当前使用的markdown编辑器是Haroopad，使用hexo新建了一个md文档，文件名就是本章标题“安装wordpress出现500 Internal Server Error”,然后双击右击打开这个文件都不行。后来才发现文件名不能有空格。科科~&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="wordpress" scheme="http://blog.eieme.com/categories/wordpress/"/>
+    
+    
+      <category term="wordpress" scheme="http://blog.eieme.com/tags/wordpress/"/>
+    
+      <category term="Error" scheme="http://blog.eieme.com/tags/Error/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo常用命令</title>
+    <link href="http://blog.eieme.com/Hexo/Hexo%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%A0%E4%B8%AA%E5%91%BD%E4%BB%A4/"/>
+    <id>http://blog.eieme.com/Hexo/Hexo常用的几个命令/</id>
+    <published>2016-10-31T14:24:35.000Z</published>
+    <updated>2017-08-08T01:02:38.248Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h1><p> 节选自<a href="http://www.ezlippi.com/" target="_blank" rel="external">EZLippi-浮生志</a>的<a href="http://www.ezlippi.com/blog/2016/02/jekyll-to-hexo.html" target="_blank" rel="external">Jekyll迁移到Hexo搭建个人博客</a></p>
+<h2 id="创建新博文"><a href="#创建新博文" class="headerlink" title="创建新博文"></a>创建新博文</h2><p>执行new命令，生成指定名称的文章至hexo\source_posts\postName.md<br><figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="type"></span>[layout] <span class="string">"文章名称"</span> <span class="meta">#新建文章</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>其中layout是可选参数，默认值为post。有哪些layout呢，请到scaffolds目录下查看，这些文件名称就是layout名称。当然你可以添加自己的layout，方法就是添加一个文件即可，同时你也可以编辑现有的layout，比如post的layout默认是hexo\scaffolds\post.md<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">title:</span> <span class="string">&#123;&#123;</span> <span class="string">title</span> <span class="string">&#125;&#125;</span></div><div class="line"><span class="attr">date:</span> <span class="string">&#123;&#123;</span> <span class="string">date</span> <span class="string">&#125;&#125;</span></div><div class="line"><span class="attr">tags:</span></div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure></p>
+<p>我想添加categories，以免每次手工输入，只需要修改这个文件添加一行，如下：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">title:</span> <span class="string">&#123;&#123;</span> <span class="string">title</span> <span class="string">&#125;&#125;</span></div><div class="line"><span class="attr">date:</span> <span class="string">&#123;&#123;</span> <span class="string">date</span> <span class="string">&#125;&#125;</span></div><div class="line"><span class="attr">categories:</span></div><div class="line"><span class="attr">tags:</span></div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure></p>
+<h2 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> hexo server</span></div></pre></td></tr></table></figure>
+<p>可简写为<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> hexo s</span></div></pre></td></tr></table></figure></p>
+<h2 id="生成静态站点文件"><a href="#生成静态站点文件" class="headerlink" title="生成静态站点文件"></a>生成静态站点文件</h2><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">generate</span></div></pre></td></tr></table></figure>
+<p>可简写为<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> hexo g</span></div></pre></td></tr></table></figure></p>
+<p>##部署到Git<br>部署到Github前需要配置_config.yml文件<br>添加如下内容：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line">	<span class="attribute">type</span>: git</div><div class="line">	<span class="attribute">repository</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:eiem/eieme.github.io.git</div><div class="line">	<span class="attribute">branch</span>: master</div></pre></td></tr></table></figure></p>
+<p>然后输入<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> hexo deploy</span></div></pre></td></tr></table></figure></p>
+<p>每次部署的步骤，可按以下三步来进行。<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    <span class="attribute">h</span><span class="attribute">e</span><span class="attribute">x</span><span class="attribute">o</span> <span class="attribute">c</span><span class="attribute">l</span><span class="attribute">e</span><span class="attribute">a</span><span class="attribute">n</span></div><div class="line"></div><div class="line">    <span class="attribute">h</span><span class="attribute">e</span><span class="attribute">x</span><span class="attribute">o</span> <span class="attribute">g</span><span class="attribute">e</span><span class="attribute">n</span><span class="attribute">e</span><span class="attribute">r</span><span class="attribute">a</span><span class="attribute">t</span><span class="attribute">e</span></div><div class="line"></div><div class="line">    <span class="attribute">h</span><span class="attribute">e</span><span class="attribute">x</span><span class="attribute">o</span> <span class="attribute">d</span><span class="attribute">e</span><span class="attribute">p</span><span class="attribute">l</span><span class="attribute">o</span><span class="attribute">y</span></div></pre></td></tr></table></figure></p>
+<h1 id="总结-常用命令："><a href="#总结-常用命令：" class="headerlink" title="总结-常用命令："></a>总结-常用命令：</h1><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span> <span class="meta">#新建文章</span></div><div class="line"></div><div class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span> <span class="meta">#新建页面</span></div><div class="line"></div><div class="line">hexo generate <span class="meta">#生成静态页面至public目录</span></div><div class="line"></div><div class="line">hexo <span class="keyword">server</span> <span class="meta">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line"></div><div class="line">hexo deploy <span class="meta">#将.deploy目录部署到GitHub</span></div><div class="line"></div><div class="line">hexo help <span class="meta"># 查看帮助</span></div><div class="line"></div><div class="line">hexo version <span class="meta">#查看Hexo的版本</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Hexo常用命令&quot;&gt;&lt;a href=&quot;#Hexo常用命令&quot; class=&quot;headerlink&quot; title=&quot;Hexo常用命令&quot;&gt;&lt;/a&gt;Hexo常用命令&lt;/h1&gt;&lt;p&gt; 节选自&lt;a href=&quot;http://www.ezlippi.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;EZLippi-浮生志&lt;/a&gt;的&lt;a href=&quot;http://www.ezlippi.com/blog/2016/02/jekyll-to-hexo.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Jekyll迁移到Hexo搭建个人博客&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;创建新博文&quot;&gt;&lt;a href=&quot;#创建新博文&quot; class=&quot;headerlink&quot; title=&quot;创建新博文&quot;&gt;&lt;/a&gt;创建新博文&lt;/h2&gt;&lt;p&gt;执行new命令，生成指定名称的文章至hexo\source_posts\postName.md&lt;br&gt;&lt;figure class=&quot;highlight haxe&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;hexo &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;&lt;/span&gt;[layout] &lt;span class=&quot;string&quot;&gt;&quot;文章名称&quot;&lt;/span&gt; &lt;span class=&quot;meta&quot;&gt;#新建文章&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://blog.eieme.com/categories/Hexo/"/>
+    
+    
+      <category term="命令" scheme="http://blog.eieme.com/tags/%E5%91%BD%E4%BB%A4/"/>
+    
+      <category term="Hexo" scheme="http://blog.eieme.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我是标题</title>
+    <link href="http://blog.eieme.com/%E9%9A%8F%E8%AE%B0/%E5%86%99%E5%9C%A8%E5%BC%80%E5%A7%8B/"/>
+    <id>http://blog.eieme.com/随记/写在开始/</id>
+    <published>2016-10-31T13:37:33.000Z</published>
+    <updated>2017-08-08T01:02:38.254Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="写在开始"><a href="#写在开始" class="headerlink" title="写在开始"></a>写在开始</h1><p>总算是把这个博客搭建起来了，做这个博客的最初想法是要把工作中遇到的一些问题记录下来。平时遇到问题就去网上找解决方案，解决之后也没有做过什么记录之类的，等下次遇到同样的问题可能还得去网上找方案。<br><a id="more"></a><br>很久不写东西了。或者说根本就不想写- -<br>总感觉自己表达不清想说的话。 T_T<br>想到什么就写什么吧。<br>我也不知道我能坚持多久。<br>这个博客也是拖了俩星期才弄完。<br>西吧。<br>其实我不太喜欢这个Hexo主题Home Page的样式。我想改改的。<br>嗯。。然而能力并不到位。就一直拖啊拖。-0-<br>今天想了想。先用着吧。总不能大好的网站闲置了吧。<br>然后。这就开整。<br>其实也就改了改变量啥的。磨磨唧唧到这个点了-</p>
+<pre><code>最后--
+            我自横刀向天笑，笑完我就去睡觉。
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;写在开始&quot;&gt;&lt;a href=&quot;#写在开始&quot; class=&quot;headerlink&quot; title=&quot;写在开始&quot;&gt;&lt;/a&gt;写在开始&lt;/h1&gt;&lt;p&gt;总算是把这个博客搭建起来了，做这个博客的最初想法是要把工作中遇到的一些问题记录下来。平时遇到问题就去网上找解决方案，解决之后也没有做过什么记录之类的，等下次遇到同样的问题可能还得去网上找方案。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="随记" scheme="http://blog.eieme.com/categories/%E9%9A%8F%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+</feed>
